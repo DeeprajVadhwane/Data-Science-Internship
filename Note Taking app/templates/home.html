@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking Application</title>
+</head>
+<body>
+    <div style="max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h1>Note Taking Application</h1>
+        <form action="/" method="post" style="margin-bottom: 20px;">
+            <label for="note" style="display: block; margin-bottom: 5px; font-weight: bold;">Note:</label>
+            <input type="text" id="note" name="note" placeholder="Enter a note" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            <button type="submit" style="display: block; width: 100%; padding: 10px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Note down</button>
+        </form>
+
+        <ul style="list-style-type: none; padding: 0;">
+        {% for note in notes %}
+            <li style="margin-bottom: 10px;">{{ note }} 
+                <a href="/delete/{{ loop.index0 }}" style="color: #dc3545; text-decoration: none; margin-left: 10px;">Delete</a>
+            </li>
+        {% endfor %}
+        </ul>
+
+        <form action="/clear" method="get">
+            <button type="submit" style="display: block; width: 100%; padding: 10px; background-color: #dc3545; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Clear All Notes</button>
+        </form>
+    </div>
+</body>
+</html>
