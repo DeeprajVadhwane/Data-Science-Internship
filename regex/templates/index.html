@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Application</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Regex Application</h1>
+        <form action="/result" method="post">
+            <label for="regex_exp">Regular Expression:</label>
+            <input type="text" id="regex_exp" name="regex_exp" required>
+            <label for="text_data">Text Data:</label>
+            <input type="text" id="text_data" name="text_data" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result">
+            {% if matches %}
+                <h3>Matches:</h3>
+                <p>Total number of matches: {{ matches|length }}</p>
+                <ul>
+                {% for match in matches %}
+                    <li>{{ match }}</li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No matching words</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
