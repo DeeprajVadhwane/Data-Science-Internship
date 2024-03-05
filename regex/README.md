@@ -46,12 +46,9 @@ The application can be deployed on various platforms. Below are instructions for
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Authors
 
-- Deepraj Vadhwane deeprajvadhwane01@gmail.com
+- Deepraj Vadhwane   deeprajvadhwane01@gmail.com
 
 
