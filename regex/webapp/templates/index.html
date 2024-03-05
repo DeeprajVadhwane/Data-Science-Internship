@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,22 +11,27 @@
         <h1>Regex Application</h1>
         <form action="/result" method="post">
             <label for="regex_exp">Regular Expression:</label>
-            <input type="text" id="regex_exp" name="regex_exp" required>
+            <input type="text" id="regex_exp" name="regex_exp" required autocomplete="off">
+            
             <label for="text_data">Text Data:</label>
-            <input type="text" id="text_data" name="text_data" required>
+            <input type="text" id="text_data" name="text_data" required autocomplete="off" class="big-input">
+
+
             <button type="submit">Submit</button>
         </form>
         <div id="result">
-            {% if matches %}
-                <h3>Matches:</h3>
-                <p>Total number of matches: {{ matches|length }}</p>
-                <ul>
-                {% for match in matches %}
-                    <li>{{ match }}</li>
-                {% endfor %}
-                </ul>
-            {% else %}
-                <p>No matching words</p>
+            {% if matches is not none %}
+                {% if matches %}
+                    <h3>Matches:</h3>
+                    <p>Total number of matches: {{ matches|length }}</p>
+                    <p>
+                    {% for match in matches %}
+                        {{ match }}&nbsp;
+                    {% endfor %}
+                    </p>
+                {% else %}
+                    <p>No matching words</p>
+                {% endif %}
             {% endif %}
         </div>
     </div>
