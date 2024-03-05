@@ -20,7 +20,7 @@ Regular expressions provide a powerful tool for pattern matching and text proces
     python app.py
     ```
 
-2. Access the application in your web browser at `[http://localhost:5000](http://13.234.204.23:5000/)`.
+2. Access the application in your web browser at `(http://13.234.204.23:5000/)`.
 
 3. Input regex patterns and textual data to perform data processing tasks.
 
