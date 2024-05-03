@@ -16,7 +16,7 @@ def prediction():
 
         model = joblib.load('naive_bayes.pkl')
 
-        prediction = model.predict(data_point)
+        prediction = model.predict(data_point)  
 
         if prediction[0] == 1:
             result = "😄 Positive Review 😄"
